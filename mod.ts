@@ -10,4 +10,6 @@ export const rgb =
     new Color("oklch", [l, c, h])
         .to("srgb")
         .coords
-        .map(v => Math.round(Math.max(0, Math.min(v, 1))*255))
+        .map(v =>
+            Math.round(Math.max(0, Math.min(v ?? 0, 1))*255)
+        ) as [number, number, number]
